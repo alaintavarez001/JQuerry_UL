@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Rearrange Array</title>
+
+</head>
+
+  <body style="font-family: arial">
+
+    <h2>Top 10 Miami Restaurants</h2>
+
+    <div class="list">
+
+      <ul id="list">
+        <li>Joe's Stone Crab</li>
+        <li>Versailles</li>
+        <li>Zuma</li>
+        <li>The Capital Grilla</li>
+        <li>CVI.CHE 105</li>
+        <li>Michael's Genuine Food &amp; Drink</li>
+        <li>Area 31</li>
+        <li>La Mar by Gaston Acurio</li>
+        <li>II Gabbiano</li>
+        <li>Blue Collar</li>
+      </ul>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+
+      $("<button type='button' id='button1'>Alphabetical Order</button>").insertAfter("ul");
+
+      $("<button type='button' id='button2'>Rearange Backwards</button>").insertAfter("ul");
+
+      $("#button1").click(function(){
+      var $list = $("#list");
+      $list.children().detach().sort(function(a, b) {
+      return $(a).text().localeCompare($(b).text());
+      }).appendTo($list);
+      });
+
+      $("#button2").click(function(){
+      var list = $('ul');
+      var listItems = list.children('li');
+      list.append(listItems.get().reverse());
+      });
+
+    });
+
+    </script>
+
+  </body>
+
+</html>
